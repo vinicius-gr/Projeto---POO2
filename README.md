@@ -1,9 +1,9 @@
-# Projeto POO 2
+# Sistema de Gerenciamento de Condomínio
 
-Este projeto será apresentado na diciplina de programação orientada a objetos 2 (***PÊÓÓ Doish***) pra mostrar que a gente tá **manjando**.<br>
-> A principio a linguagem ultilizada será Java :expressionless:<br>
+Este projeto será apresentado na diciplina de programação orientada a objetos 2 (***PÊÓÓ Dois***) e modelagem de software (***EmeEsseDabliu***) pra mostrar que a gente tá **manjando**.<br>
+> A linguagem ultilizada será Java :expressionless:<br>
 > <strike>Não há tema definido ainda.</strike> AGR TEM! :tada::tada:<br>
-> Vai ser algo ambicioso heheh.<br>
+> <strike>Vai ser algo ambicioso</strike> Nem tanto heheh.<br>
 
 Coisas a se fazer | Coisas feitas
 ----------------- | --------------
