@@ -43,8 +43,7 @@ public class FuncionarioDaoImpl  extends CrudDaoImpl<Funcionario,String> impleme
         }  
         if(modelo.getHorarioEntrada()!=null){
             sql.append(" and horarioEntrada like :horarioEntrada ");
-        }  
-        
+        } 
         if(modelo.getHorarioSaida()!=null){
             sql.append(" and horarioSaida like :horarioSaida ");
         }  
@@ -73,11 +72,11 @@ public class FuncionarioDaoImpl  extends CrudDaoImpl<Funcionario,String> impleme
               mapa.put("telefone", modelo.getTelefone());
         }  
         if(modelo.getHorarioEntrada()!=null){
-              mapa.put("horarioDeEntrada", modelo.getHorarioEntrada());
+              mapa.put("horarioEntrada", modelo.getHorarioEntrada());
         }  
         
         if(modelo.getHorarioSaida()!=null){
-              mapa.put("horarioDeSaida", modelo.getHorarioSaida());
+              mapa.put("horarioSaida", modelo.getHorarioSaida());
         }  
         return mapa;
     }
