@@ -24,11 +24,11 @@ public class Funcionario extends PessoaVinculada{
     private String setorDeServico;
    
     @Column (name="horario_entrada")
-    //@Temporal(value=TemporalType.TIME)
+  //  @Temporal(value=TemporalType.TIME)
     private Date horarioEntrada;
    
     @Column (name="horario_saida")
-   // @Temporal(value=TemporalType.TIME)
+  //  @Temporal(value=TemporalType.TIME)
     private Date horarioSaida;
     
 

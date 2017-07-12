@@ -54,7 +54,7 @@ public abstract class CrudDaoImpl <E extends Serializable, I> implements CrudDao
         
         String sql=this.getConsultaSql(classeModelo);
         
-        Query q= em.createQuery(sql);
+        Query q = em.createQuery(sql);
         
         Map<String,Object>parametros= getParametrosMapa(classeModelo);
         

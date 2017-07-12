@@ -27,18 +27,17 @@ public class AreaComumDaoImpl extends CrudDaoImpl<AreaComum,String> implements A
 
     @Override
     protected String getConsultaSql(AreaComum modelo) {
-        StringBuffer sql = new StringBuffer("from Morador where "
+        StringBuffer sql = new StringBuffer("from AreaComum where "
                + "1=1");
         if(modelo.getValor()<0){
-            sql.append("and valor like :valor " );
+            sql.append(" and valor like :valor " );
         }
         if(modelo.getNome()!=null && !modelo.getNome().equals("")){
             sql.append("and nome like :nome ");
         }
         if(modelo.getEndereco()!=null && !modelo.getEndereco().equals("")){
-            sql.append(" and endereco like :endereco ");
+            sql.append("and endereco like :endereco");
         }
- 
         return sql.toString();
     }
 

@@ -27,7 +27,7 @@ public class EncomendaDaoImpl extends CrudDaoImpl<Encomenda,Integer> implements 
     @Override
     protected String getConsultaSql(Encomenda modelo) {
       
-       StringBuffer sql = new StringBuffer("from Morador where "
+       StringBuffer sql = new StringBuffer("from encomenda where "
                + "1=1");
         if(modelo.getDestinatario()!=null && !modelo.getDestinatario().equals("")){
             sql.append("and destinatario like :destinatario " );

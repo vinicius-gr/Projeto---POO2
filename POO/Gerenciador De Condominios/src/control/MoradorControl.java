@@ -1,9 +1,7 @@
 package control;
 
-
-
 import java.util.Iterator;
-import model.dao.crud.MoradorDao;
+import model.dao.CrudDao;
 import model.domain.pessoas.Morador;
 import model.service.ServiceLocator;
 
@@ -19,12 +17,11 @@ import model.service.ServiceLocator;
  */
 public class MoradorControl {
 
-    private final MoradorDao dao;
+    private final CrudDao dao;
     
     public MoradorControl(){
     this.dao=ServiceLocator.getMoradorDao();
     }
-    
     
     public void salvarMorador(String nome,String cpf, String email, String numero,String endereco){
         Morador m= new Morador();
@@ -35,6 +32,7 @@ public class MoradorControl {
         m.setEndereco(endereco);
         dao.salvar(m);
     }
+    
     public void excluirMorador(String nome,String cpf, String email, String numero,String endereco){
         Morador m= new Morador();
         m.setCpf(cpf);
@@ -44,6 +42,7 @@ public class MoradorControl {
         m.setEndereco(endereco);
         dao.excluir(m);
     }
+    
     public Iterator pesquisarMorador(String nome,String cpf, String email, String numero,String endereco){
         Morador m= new Morador();
         m.setCpf(cpf);

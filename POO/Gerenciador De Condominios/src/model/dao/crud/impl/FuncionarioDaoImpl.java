@@ -24,7 +24,7 @@ public class FuncionarioDaoImpl  extends CrudDaoImpl<Funcionario,String> impleme
 
     @Override
     protected String getConsultaSql(Funcionario modelo) {
-       StringBuffer sql = new StringBuffer("from Morador where "
+       StringBuffer sql = new StringBuffer("from Funcionario where "
                + "1=1");
         if(modelo.getCpf()!=null && !modelo.getCpf().equals("")){
             sql.append("and cpf like :cpf " );
