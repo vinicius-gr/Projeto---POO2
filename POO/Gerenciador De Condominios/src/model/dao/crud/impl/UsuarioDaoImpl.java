@@ -25,7 +25,7 @@ public class UsuarioDaoImpl  extends CrudDaoImpl<Usuario,String> implements Usua
     @Override
     protected String getConsultaSql(Usuario modelo) {
         
-        StringBuffer sql = new StringBuffer("from Morador where "
+        StringBuffer sql = new StringBuffer("from Usuario where "
                + "1=1");
         if(modelo.getCpf()!=null && !modelo.getCpf().equals("")){
             sql.append("and cpf like :cpf " );
@@ -34,12 +34,11 @@ public class UsuarioDaoImpl  extends CrudDaoImpl<Usuario,String> implements Usua
             sql.append("and nome like :nome ");
         }
         if(modelo.getPermissao()!=null && !modelo.getPermissao().equals("")){
-            sql.append(" and endereco like :endereco ");
+            sql.append(" and permissao like :permissao ");
         }
         if(modelo.getSenha()!=null && !modelo.getSenha().equals("")){
             sql.append(" and senha like :senha ");
         }
-
         return sql.toString();
 
     }

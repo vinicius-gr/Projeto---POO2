@@ -5,11 +5,9 @@
  */
 package control;
 
-import java.sql.Date;
 import java.util.Iterator;
 import model.dao.CrudDao;
 import model.domain.Encomenda;
-import model.domain.pessoas.Funcionario;
 import model.service.ServiceLocator;
 
 /**
@@ -21,12 +19,11 @@ public class EncomendaControl {
     private final CrudDao dao;
     
     public EncomendaControl(){
-    this.dao=ServiceLocator.getFuncionarioDao();
+    this.dao=ServiceLocator.getEncomendaDao();
     }
     
-    public void salvarEncomenda(int codigo,String endereco, String destinatario){
+    public void salvarEncomenda(String endereco, String destinatario){
         Encomenda m= new Encomenda();
-        m.setCodigo(codigo);
         m.setEndereco(endereco);
         m.setDestinatario(destinatario);
         dao.salvar(m);
@@ -40,7 +37,7 @@ public class EncomendaControl {
         dao.excluir(m);
     }
     
-    public Iterator pesquisarEncomenda(int codigo,String endereco, String destinatario){
+    public Iterator pesquisarEncomenda(int codigo, String endereco, String destinatario){
         Encomenda m= new Encomenda();
         m.setCodigo(codigo);
         m.setEndereco(endereco);

@@ -36,7 +36,7 @@ public class EncomendaDaoImpl extends CrudDaoImpl<Encomenda,Integer> implements 
             sql.append("and endereco like :endereco ");
         }
         if(modelo.getCodigo()>=0){
-            sql.append(" and codigo like :codigo ");
+            sql.append(" and codigo = :codigo ");
         }    
         return sql.toString();    }
 

@@ -25,7 +25,7 @@ public class ReclamacaoDaoImpl  extends CrudDaoImpl<Reclamacao,Integer> implemen
     @Override
     protected String getConsultaSql(Reclamacao modelo) {
         
-        StringBuffer sql = new StringBuffer("from Morador where "
+        StringBuffer sql = new StringBuffer("from Reclamacao where "
                + "1=1");
         if(modelo.getAssunto()!=null && !modelo.getAssunto().equals("")){
             sql.append("and assunto like :assunto " );
@@ -37,7 +37,7 @@ public class ReclamacaoDaoImpl  extends CrudDaoImpl<Reclamacao,Integer> implemen
             sql.append(" and texto like :texto ");
         }
         if(modelo.getCodigo()>=0){
-            sql.append(" and codigo like :codigo ");
+            sql.append(" and codigo = :codigo ");
         }
         return sql.toString();
    }
