@@ -24,13 +24,13 @@ public class VeiculoDaoImpl extends CrudDaoImpl<Veiculo,String> implements Veicu
 
     @Override
     protected String getConsultaSql(Veiculo modelo) {
-               StringBuffer sql = new StringBuffer("from Morador where "
+               StringBuffer sql = new StringBuffer("from Veiculo where "
                + "1=1");
         if(modelo.getPlaca()!=null && !modelo.getPlaca().equals("")){
             sql.append("and placa like :placa " );
         }
         if(modelo.getModelo()!=null && !modelo.getModelo().equals("")){
-            sql.append("and nome like :nome ");
+            sql.append("and modelo like :modelo ");
         }
         
         return sql.toString();

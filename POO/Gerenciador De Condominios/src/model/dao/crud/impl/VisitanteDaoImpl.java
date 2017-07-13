@@ -27,7 +27,7 @@ public class VisitanteDaoImpl extends CrudDaoImpl<Visitante,String> implements V
     @Override
     protected String getConsultaSql(Visitante modelo) {
         
-        StringBuffer sql = new StringBuffer("from Morador where "
+        StringBuffer sql = new StringBuffer("from Visitante where "
                + "1=1");
         if(modelo.getCpf()!=null && !modelo.getCpf().equals("")){
             sql.append("and cpf like :cpf " );
@@ -36,14 +36,17 @@ public class VisitanteDaoImpl extends CrudDaoImpl<Visitante,String> implements V
             sql.append("and nome like :nome ");
         }
         if(modelo.getHoraDeEntrada()!=null){
-            sql.append(" and horaDeEntrada like :horaDeEntrada ");
+            sql.append(" and horaDeEntrada = :horaDeEntrada ");
         }
         if(modelo.getHoraDeSaida()!=null){
-            sql.append(" and horaDeSaida like :horaDeSaida ");
+            sql.append(" and horaDeSaida = :horaDeSaida ");
         }
         if(modelo.getTelefone()!=null && !modelo.getTelefone().equals("")){
             sql.append(" and telefone like :telefone ");
-        }    
+        } 
+        if(modelo.isPrestadorDeServico() != false){
+            sql.append(" and prestadorDeServico = :prestadorDeServico ");
+        } 
         return sql.toString();
     }
 
@@ -66,7 +69,10 @@ public class VisitanteDaoImpl extends CrudDaoImpl<Visitante,String> implements V
         }
         if(modelo.getTelefone()!=null && !modelo.getTelefone().equals("")){
             mapa.put("telefone", modelo.getTelefone());        
-        }    
+        }   
+        if(modelo.isPrestadorDeServico() != false){
+            mapa.put("prestadorDeServico", modelo.isPrestadorDeServico());        
+        }
 
         return mapa;
     }
