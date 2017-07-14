@@ -3,12 +3,16 @@
   <persistence-unit name="GerenciadorDeCondominiosPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/GerenciadorDeCondominioPU"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/Gerenciador"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.password" value="root"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+<<<<<<< HEAD
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+=======
+      <property name="hibernate.show_sql" value="true"/>
+>>>>>>> a236fbebbc2e47fe9598bcccec0bc00fd87cf6d1
     </properties>
   </persistence-unit>
 </persistence>
