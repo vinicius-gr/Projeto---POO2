@@ -14,8 +14,12 @@ public class FuncionarioMenuView extends javax.swing.JPanel {
     /**
      * Creates new form FuncionarioMenuView
      */
-    public FuncionarioMenuView() {
+    public FuncionarioMenuView(String permissao) {
         initComponents();
+        
+        if(permissao == "Porteiro" || permissao == "Morador" || permissao == "MoradorMestre"){
+            this.cadastrarFuncionariojButton.setVisible(false);
+        }
     }
 
     /**
@@ -27,12 +31,12 @@ public class FuncionarioMenuView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cadastrarFuncionariojButton = new javax.swing.JButton();
+        consultarFuncionariojButton = new javax.swing.JButton();
 
-        jButton1.setText("Cadastrar Funcionário");
+        cadastrarFuncionariojButton.setText("Cadastrar Funcionário");
 
-        jButton2.setText("Consultar Funcionário");
+        consultarFuncionariojButton.setText("Consultar Funcionário");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -40,9 +44,9 @@ public class FuncionarioMenuView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
-                .addComponent(jButton1)
+                .addComponent(cadastrarFuncionariojButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(consultarFuncionariojButton)
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -50,15 +54,15 @@ public class FuncionarioMenuView extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(cadastrarFuncionariojButton)
+                    .addComponent(consultarFuncionariojButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton cadastrarFuncionariojButton;
+    private javax.swing.JButton consultarFuncionariojButton;
     // End of variables declaration//GEN-END:variables
 }

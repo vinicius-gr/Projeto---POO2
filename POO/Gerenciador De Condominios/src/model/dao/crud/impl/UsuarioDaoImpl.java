@@ -63,6 +63,5 @@ public class UsuarioDaoImpl  extends CrudDaoImpl<Usuario,String> implements Usua
         
         return mapa;
     }
-    
-   
+
 }

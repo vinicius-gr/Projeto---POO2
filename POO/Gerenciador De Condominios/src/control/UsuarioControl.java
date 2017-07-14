@@ -39,12 +39,9 @@ public class UsuarioControl {
         dao.excluir(m);
     }
     
-    public Iterator pesquisarUsuario(String cpf,String nome, String senha, String permissao){
+    public Iterator pesquisarUsuario(String cpf){
         Usuario m= new Usuario();
         m.setCpf(cpf);
-        m.setNome(nome);
-        m.setSenha(senha);
-        m.setPermissao(permissao);
         return dao.pesquisar(m).iterator();
     }
 }

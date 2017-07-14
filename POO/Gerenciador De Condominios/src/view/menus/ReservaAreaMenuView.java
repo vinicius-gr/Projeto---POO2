@@ -14,7 +14,7 @@ public class ReservaAreaMenuView extends javax.swing.JPanel {
     /**
      * Creates new form ReservaAreaMenuView
      */
-    public ReservaAreaMenuView() {
+    public ReservaAreaMenuView(String permissao) {
         initComponents();
     }
 

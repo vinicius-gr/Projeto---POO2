@@ -5,19 +5,25 @@
  */
 package view.menus;
 
+
 /**
  *
  * @author Aline
  */
-public class EncomendasMenuView extends javax.swing.JPanel {
+public class EncomendasMenuView extends javax.swing.JPanel{
 
     /**
      * Creates new form EncomendaMenuView
      */
-    public EncomendasMenuView() {
+    public EncomendasMenuView(String permissao) {
         initComponents();
+        
+        if(permissao =="Morador" || permissao == "MoradorMestre"){
+            this.CadastroEncomendasjButton.setVisible(false);
+        }
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -79,4 +85,6 @@ public class EncomendasMenuView extends javax.swing.JPanel {
     private javax.swing.JButton CadastroEncomendasjButton;
     private javax.swing.JButton ListarEncomendasjButton;
     // End of variables declaration//GEN-END:variables
+
+    
 }

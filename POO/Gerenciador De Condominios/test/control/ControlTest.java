@@ -5,7 +5,7 @@
  */
 package control;
 
-import java.sql.Date;
+import control.domain.VisitanteControl;
 import java.util.Iterator;
 import model.domain.pessoas.Visitante;
 

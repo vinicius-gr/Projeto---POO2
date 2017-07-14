@@ -14,7 +14,7 @@ public class InformacoesPessoaisMenuView extends javax.swing.JPanel {
     /**
      * Creates new form InformacoesPessoaisMenuView
      */
-    public InformacoesPessoaisMenuView() {
+    public InformacoesPessoaisMenuView(String permissao) {
         initComponents();
     }
 

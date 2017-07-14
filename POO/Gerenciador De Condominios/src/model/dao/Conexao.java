@@ -20,7 +20,7 @@ public class Conexao {
     
     /*Padrão Singleton */
     private Conexao(){
-        emf= Persistence.createEntityManagerFactory("GerenciadorDeCondominioPU");
+        emf= Persistence.createEntityManagerFactory("GerenciadorDeCondominiosPU");
     }
     
     public synchronized static EntityManager getConexao(){

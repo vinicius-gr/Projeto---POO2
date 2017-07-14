@@ -14,8 +14,13 @@ public class FinanceiroMenuView extends javax.swing.JPanel {
     /**
      * Creates new form FinanceiroMenuView
      */
-    public FinanceiroMenuView() {
+    public FinanceiroMenuView(String permissao) {
         initComponents();
+        
+        if(permissao == "Porteiro" || permissao == "Morador" || permissao == "MoradorMestre"){
+            this.IncluirLancamentojButton.setVisible(false);
+            this.ConsultarFinanceirojButton.setVisible(false);
+        }
     }
 
     /**

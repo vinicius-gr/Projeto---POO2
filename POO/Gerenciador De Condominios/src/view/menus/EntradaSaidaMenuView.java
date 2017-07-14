@@ -14,8 +14,12 @@ public class EntradaSaidaMenuView extends javax.swing.JPanel {
     /**
      * Creates new form EntradaSaidaMenuView2
      */
-    public EntradaSaidaMenuView() {
+    public EntradaSaidaMenuView(String permissao) {
         initComponents();
+        
+        if(permissao =="Morador" || permissao == "MoradorMestre"){
+            this.CadastroVisitantejButton.setVisible(false);
+        }
     }
 
     /**

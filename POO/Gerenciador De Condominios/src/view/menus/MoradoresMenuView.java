@@ -14,8 +14,12 @@ public class MoradoresMenuView extends javax.swing.JPanel {
     /**
      * Creates new form MoradoreMenuView
      */
-    public MoradoresMenuView() {
+    public MoradoresMenuView(String permissao) {
         initComponents();
+        
+        if(permissao == "Porteiro" || permissao == "Morador"){
+            this.CadastrarMoradorjButton.setVisible(false);
+        }
     }
 
     /**

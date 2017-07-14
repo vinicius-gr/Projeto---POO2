@@ -5,21 +5,22 @@
  */
 package view;
 
+import control.View.Tela;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
 /**
  *
- * @author aline.lima
+ * @author Aline
  */
 public class MenuPrincipal extends javax.swing.JPanel {
 
     /**
-     * Creates new form TesteMenu
+     * Creates new form MenuPrincipal
      */
-    public MenuPrincipal( String t) {
+    public MenuPrincipal(String t) {
         initComponents();
-      
+        
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         if(t=="Porteiro"){
             this.financeiroMenuButton.setVisible(false);
@@ -56,84 +57,161 @@ public class MenuPrincipal extends javax.swing.JPanel {
         reservasMenuButton = new javax.swing.JButton();
         infoPessoaisMenuButton = new javax.swing.JButton();
         reclamacoesMenuButton = new javax.swing.JButton();
-        LogoutMenuButton = new javax.swing.JButton();
+        logoutMenuButton = new javax.swing.JButton();
 
         moradoresMenuButton.setText("Moradores");
-        
+        moradoresMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moradoresMenuButtonActionPerformed(evt);
+            }
+        });
+
         funcionarioMenuButton.setText("Funcionários");
+        funcionarioMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                funcionarioMenuButtonActionPerformed(evt);
+            }
+        });
 
         financeiroMenuButton.setText("Financeiro");
+        financeiroMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                financeiroMenuButtonActionPerformed(evt);
+            }
+        });
 
         entradaSaidaMenuButton.setText("Entrada/Saída");
-        
+        entradaSaidaMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaSaidaMenuButtonActionPerformed(evt);
+            }
+        });
+
         encomendasMenuButton.setText("Encomendas");
+        encomendasMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                encomendasMenuButtonActionPerformed(evt);
+            }
+        });
 
         reservasMenuButton.setText("Reservas");
+        reservasMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reservasMenuButtonActionPerformed(evt);
+            }
+        });
 
         infoPessoaisMenuButton.setText("Inf. Pessoais");
-        
-        reclamacoesMenuButton.setText("Reclamações");
+        infoPessoaisMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoPessoaisMenuButtonActionPerformed(evt);
+            }
+        });
 
-        LogoutMenuButton.setText("Logout");
-     
+        reclamacoesMenuButton.setText("Reclamações");
+        reclamacoesMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reclamacoesMenuButtonActionPerformed(evt);
+            }
+        });
+
+        logoutMenuButton.setText("Logout");
+        logoutMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutMenuButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(entradaSaidaMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(encomendasMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(financeiroMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(moradoresMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(funcionarioMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(reservasMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(infoPessoaisMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(reclamacoesMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(LogoutMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(moradoresMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(funcionarioMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(financeiroMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(entradaSaidaMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(encomendasMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(reservasMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoPessoaisMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(reclamacoesMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(logoutMenuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(moradoresMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(funcionarioMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(financeiroMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(entradaSaidaMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(encomendasMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(reservasMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(infoPessoaisMenuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(reclamacoesMenuButton)
-                .addGap(18, 18, 18)
-                .addComponent(LogoutMenuButton)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(logoutMenuButton)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LogoutMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutMenuButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LogoutMenuButtonActionPerformed
+    private void moradoresMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moradoresMenuButtonActionPerformed
+       Tela.atualizaTela("Morador");
+    }//GEN-LAST:event_moradoresMenuButtonActionPerformed
+
+    private void funcionarioMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_funcionarioMenuButtonActionPerformed
+       Tela.atualizaTela("Funcionario");
+    }//GEN-LAST:event_funcionarioMenuButtonActionPerformed
+
+    private void financeiroMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_financeiroMenuButtonActionPerformed
+       Tela.atualizaTela("Financeiro");
+    }//GEN-LAST:event_financeiroMenuButtonActionPerformed
 
     private void entradaSaidaMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaSaidaMenuButtonActionPerformed
-        // TODO add your handling code here:
+       Tela.atualizaTela("Visitante");
     }//GEN-LAST:event_entradaSaidaMenuButtonActionPerformed
+
+    private void encomendasMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encomendasMenuButtonActionPerformed
+       Tela.atualizaTela("Encomenda");
+    }//GEN-LAST:event_encomendasMenuButtonActionPerformed
+
+    private void reservasMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservasMenuButtonActionPerformed
+       Tela.atualizaTela("Area");
+    }//GEN-LAST:event_reservasMenuButtonActionPerformed
+
+    private void infoPessoaisMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoPessoaisMenuButtonActionPerformed
+       Tela.atualizaTela("InformacaoPessoal");
+    }//GEN-LAST:event_infoPessoaisMenuButtonActionPerformed
+
+    private void reclamacoesMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reclamacoesMenuButtonActionPerformed
+       Tela.atualizaTela("Reclamacao");
+    }//GEN-LAST:event_reclamacoesMenuButtonActionPerformed
+
+    private void logoutMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutMenuButtonActionPerformed
+        Tela.end();
+        Tela.start();
+    }//GEN-LAST:event_logoutMenuButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton LogoutMenuButton;
-    private javax.swing.JButton financeiroMenuButton;
-    private javax.swing.JButton infoPessoaisMenuButton;
-    private javax.swing.JButton moradoresMenuButton;
-    private javax.swing.JButton funcionarioMenuButton;
-    private javax.swing.JButton entradaSaidaMenuButton;
     private javax.swing.JButton encomendasMenuButton;
-    private javax.swing.JButton reservasMenuButton;
+    private javax.swing.JButton entradaSaidaMenuButton;
+    private javax.swing.JButton financeiroMenuButton;
+    private javax.swing.JButton funcionarioMenuButton;
+    private javax.swing.JButton infoPessoaisMenuButton;
+    private javax.swing.JButton logoutMenuButton;
+    private javax.swing.JButton moradoresMenuButton;
     private javax.swing.JButton reclamacoesMenuButton;
+    private javax.swing.JButton reservasMenuButton;
     // End of variables declaration//GEN-END:variables
 }

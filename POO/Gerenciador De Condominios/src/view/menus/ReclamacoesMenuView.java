@@ -14,8 +14,16 @@ public class ReclamacoesMenuView extends javax.swing.JPanel {
     /**
      * Creates new form reclamacoesMenuView
      */
-    public ReclamacoesMenuView() {
+    public ReclamacoesMenuView(String permissao) {
         initComponents();
+        
+        if(permissao == "Porteiro"){
+            this.RegistrarReclamacoesjButton.setVisible(false);
+        }
+        if(permissao == "Porteiro" || permissao == "Morador" || permissao == "MoradorMestre"){
+            this.ResponderReclamacoesjButton.setVisible(false);
+        }
+        
     }
 
     /**
