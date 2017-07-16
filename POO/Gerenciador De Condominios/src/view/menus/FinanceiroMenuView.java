@@ -5,6 +5,8 @@
  */
 package view.menus;
 
+import control.View.Tela;
+
 /**
  *
  * @author Aline
@@ -51,6 +53,11 @@ public class FinanceiroMenuView extends javax.swing.JPanel {
         });
 
         BaixarLancamentojButton.setText("Baixar Lançamento");
+        BaixarLancamentojButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BaixarLancamentojButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -78,12 +85,16 @@ public class FinanceiroMenuView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void IncluirLancamentojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IncluirLancamentojButtonActionPerformed
-        // TODO add your handling code here:
+         Tela.atualizaTela("IncluirFinanceiro");
     }//GEN-LAST:event_IncluirLancamentojButtonActionPerformed
 
     private void ConsultarFinanceirojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarFinanceirojButtonActionPerformed
-        // TODO add your handling code here:
+         Tela.atualizaTela("ConsultarFinanceiro");
     }//GEN-LAST:event_ConsultarFinanceirojButtonActionPerformed
+
+    private void BaixarLancamentojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaixarLancamentojButtonActionPerformed
+         Tela.atualizaTela("BaixarFinanceiro");
+    }//GEN-LAST:event_BaixarLancamentojButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

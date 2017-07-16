@@ -48,6 +48,11 @@ public class ResponderReclamacaoView extends javax.swing.JPanel {
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jTextArea2.setText("Digite sua resposta:");
+        jTextArea2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextArea2FocusGained(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTextArea2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -74,6 +79,10 @@ public class ResponderReclamacaoView extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextArea2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextArea2FocusGained
+        jTextArea2.selectAll();
+    }//GEN-LAST:event_jTextArea2FocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

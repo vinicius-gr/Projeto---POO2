@@ -5,6 +5,8 @@
  */
 package view.menus;
 
+import control.View.Tela;
+
 /**
  *
  * @author Aline
@@ -35,8 +37,18 @@ public class FuncionarioMenuView extends javax.swing.JPanel {
         consultarFuncionariojButton = new javax.swing.JButton();
 
         cadastrarFuncionariojButton.setText("Cadastrar Funcionário");
+        cadastrarFuncionariojButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarFuncionariojButtonActionPerformed(evt);
+            }
+        });
 
         consultarFuncionariojButton.setText("Consultar Funcionário");
+        consultarFuncionariojButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarFuncionariojButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -59,6 +71,15 @@ public class FuncionarioMenuView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cadastrarFuncionariojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarFuncionariojButtonActionPerformed
+         Tela.atualizaTela("CadastroFuncionario");
+
+    }//GEN-LAST:event_cadastrarFuncionariojButtonActionPerformed
+
+    private void consultarFuncionariojButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarFuncionariojButtonActionPerformed
+        Tela.atualizaTela("ConsultarFuncionarios");
+    }//GEN-LAST:event_consultarFuncionariojButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

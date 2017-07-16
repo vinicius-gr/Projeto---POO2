@@ -5,6 +5,8 @@
  */
 package view.menus;
 
+import control.View.Tela;
+
 /**
  *
  * @author Aline
@@ -35,8 +37,18 @@ public class EntradaSaidaMenuView extends javax.swing.JPanel {
         ListaVisitantejButton = new javax.swing.JButton();
 
         CadastroVisitantejButton.setText("Cadastro Visitante");
+        CadastroVisitantejButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastroVisitantejButtonActionPerformed(evt);
+            }
+        });
 
         ListaVisitantejButton.setText("Lista Visitante");
+        ListaVisitantejButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListaVisitantejButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -59,6 +71,14 @@ public class EntradaSaidaMenuView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CadastroVisitantejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroVisitantejButtonActionPerformed
+        Tela.atualizaTela("CadastroVisitante");
+    }//GEN-LAST:event_CadastroVisitantejButtonActionPerformed
+
+    private void ListaVisitantejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaVisitantejButtonActionPerformed
+         Tela.atualizaTela("ListarVisitantes");
+    }//GEN-LAST:event_ListaVisitantejButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

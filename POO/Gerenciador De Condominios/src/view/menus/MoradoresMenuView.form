@@ -43,11 +43,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar Morador"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastrarMoradorjButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ListarMoradorjButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar Moradores"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ListarMoradorjButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -5,6 +5,8 @@
  */
 package view.menus;
 
+import control.View.Tela;
+
 
 /**
  *
@@ -73,11 +75,11 @@ public class EncomendasMenuView extends javax.swing.JPanel{
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadastroEncomendasjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroEncomendasjButtonActionPerformed
-        // TODO add your handling code here:
+        Tela.atualizaTela("CadastroEncomenda");
     }//GEN-LAST:event_CadastroEncomendasjButtonActionPerformed
 
     private void ListarEncomendasjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarEncomendasjButtonActionPerformed
-        // TODO add your handling code here:
+        Tela.atualizaTela("ListarEncomendas");
     }//GEN-LAST:event_ListarEncomendasjButtonActionPerformed
 
 

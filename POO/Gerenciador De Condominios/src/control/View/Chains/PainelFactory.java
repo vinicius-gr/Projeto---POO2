@@ -24,7 +24,7 @@ public abstract class PainelFactory {
            
            case "CadastroMorador":  return new CadastroMoradorView();
            case "InformacoesPessoais":  return new InformacoesPessoaisView();
-           
+           case "ListarVisitantes": return new ListarVisitanteView();
            case "CadastroVisitante":  return new CadastroVisitanteView();
            case "ConsultarFinanceiro":  return new ConsultarFinanceiroView();
            case "ConsultarFuncionarios":  return new ConsultarFuncionariosView();

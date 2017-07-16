@@ -47,16 +47,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Registar Reclama&#xe7;&#xf5;es"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RegistrarReclamacoesjButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="VisualizarReclamacoesjButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Visualizar Reclama&#xe7;&#xf5;es"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VisualizarReclamacoesjButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ResponderReclamacoesjButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Responder Reclama&#xe7;&#xf5;es"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResponderReclamacoesjButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

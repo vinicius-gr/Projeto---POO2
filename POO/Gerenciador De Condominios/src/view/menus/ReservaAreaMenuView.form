@@ -43,11 +43,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Reservar &#xc1;rea"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReservarAreajButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ConsultarReservajButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar Reserva"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarReservajButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

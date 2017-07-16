@@ -9,8 +9,8 @@ import javax.persistence.metamodel.StaticMetamodel;
 public abstract class Encomenda_ {
 
 	public static volatile SingularAttribute<Encomenda, Integer> codigo;
-	public static volatile SingularAttribute<Encomenda, Integer> endereco;
-	public static volatile SingularAttribute<Encomenda, Integer> destinatario;
+	public static volatile SingularAttribute<Encomenda, String> endereco;
+	public static volatile SingularAttribute<Encomenda, String> destinatario;
 
 }
 

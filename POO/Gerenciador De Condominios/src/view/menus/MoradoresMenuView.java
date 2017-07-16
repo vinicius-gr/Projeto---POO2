@@ -5,6 +5,8 @@
  */
 package view.menus;
 
+import control.View.Tela;
+
 /**
  *
  * @author Aline
@@ -35,8 +37,18 @@ public class MoradoresMenuView extends javax.swing.JPanel {
         ListarMoradorjButton = new javax.swing.JButton();
 
         CadastrarMoradorjButton.setText("Cadastrar Morador");
+        CadastrarMoradorjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarMoradorjButtonActionPerformed(evt);
+            }
+        });
 
         ListarMoradorjButton.setText("Consultar Moradores");
+        ListarMoradorjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListarMoradorjButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -59,6 +71,16 @@ public class MoradoresMenuView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CadastrarMoradorjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarMoradorjButtonActionPerformed
+         Tela.atualizaTela("CadastroMorador");
+
+    }//GEN-LAST:event_CadastrarMoradorjButtonActionPerformed
+
+    private void ListarMoradorjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarMoradorjButtonActionPerformed
+        Tela.atualizaTela("ConsultarMoradores");
+
+    }//GEN-LAST:event_ListarMoradorjButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

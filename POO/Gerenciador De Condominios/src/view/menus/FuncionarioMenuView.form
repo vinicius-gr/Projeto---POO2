@@ -43,11 +43,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar Funcion&#xe1;rio"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarFuncionariojButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="consultarFuncionariojButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar Funcion&#xe1;rio"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultarFuncionariojButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

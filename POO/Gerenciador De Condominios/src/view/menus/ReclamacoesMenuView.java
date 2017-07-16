@@ -5,6 +5,8 @@
  */
 package view.menus;
 
+import control.View.Tela;
+
 /**
  *
  * @author Aline
@@ -40,10 +42,25 @@ public class ReclamacoesMenuView extends javax.swing.JPanel {
         ResponderReclamacoesjButton = new javax.swing.JButton();
 
         RegistrarReclamacoesjButton.setText("Registar Reclamações");
+        RegistrarReclamacoesjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarReclamacoesjButtonActionPerformed(evt);
+            }
+        });
 
         VisualizarReclamacoesjButton.setText("Visualizar Reclamações");
+        VisualizarReclamacoesjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VisualizarReclamacoesjButtonActionPerformed(evt);
+            }
+        });
 
         ResponderReclamacoesjButton.setText("Responder Reclamações");
+        ResponderReclamacoesjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResponderReclamacoesjButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -69,6 +86,19 @@ public class ReclamacoesMenuView extends javax.swing.JPanel {
                 .addComponent(ResponderReclamacoesjButton))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RegistrarReclamacoesjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarReclamacoesjButtonActionPerformed
+        Tela.atualizaTela("RegistrarReclamacao");
+    }//GEN-LAST:event_RegistrarReclamacoesjButtonActionPerformed
+
+    private void VisualizarReclamacoesjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarReclamacoesjButtonActionPerformed
+        Tela.atualizaTela("VisualizarReclamacao");
+    }//GEN-LAST:event_VisualizarReclamacoesjButtonActionPerformed
+
+    private void ResponderReclamacoesjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResponderReclamacoesjButtonActionPerformed
+        Tela.atualizaTela("ResponderReclamacao");
+
+    }//GEN-LAST:event_ResponderReclamacoesjButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

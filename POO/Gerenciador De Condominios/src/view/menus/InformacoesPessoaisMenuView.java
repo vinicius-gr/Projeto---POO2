@@ -5,6 +5,8 @@
  */
 package view.menus;
 
+import control.View.Tela;
+
 /**
  *
  * @author Aline
@@ -30,6 +32,11 @@ public class InformacoesPessoaisMenuView extends javax.swing.JPanel {
         SalvarjButton = new javax.swing.JButton();
 
         SalvarjButton.setText("Salvar");
+        SalvarjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarjButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -48,6 +55,10 @@ public class InformacoesPessoaisMenuView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SalvarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarjButtonActionPerformed
+         Tela.atualizaTela("InformacoesPessoais");
+    }//GEN-LAST:event_SalvarjButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
