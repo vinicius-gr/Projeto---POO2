@@ -15,5 +15,7 @@ public interface ViewChain{
     
     public JPanel getPainel(String tela);
     public void setNext(ViewChain proximo);
-
+    public default void setPermissao(String permissao){
+    
+    }
 }

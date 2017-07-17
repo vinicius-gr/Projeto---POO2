@@ -18,7 +18,7 @@ public class EncomendaControl {
     
     private final CrudDao dao;
     
-    public EncomendaControl(){
+    private EncomendaControl(){
     this.dao=ServiceLocator.getEncomendaDao();
     }
     

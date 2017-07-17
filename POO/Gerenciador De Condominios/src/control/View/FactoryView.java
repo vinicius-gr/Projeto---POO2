@@ -28,6 +28,9 @@ public abstract class FactoryView {
         menuPrincipal.setNext(menu);
         FactoryView.viewChain=menuPrincipal;
        }
+       else
+        viewChain.setPermissao(permissao);
+       
         return viewChain;
     }
 }

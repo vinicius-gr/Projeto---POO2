@@ -45,9 +45,17 @@ public class ViewMenu  implements ViewChain{
      panel.add(MenuFactory.createMenu(tela,this.permissao),BorderLayout.NORTH);
      if(proximo!=null)
          panel.add(proximo.getPainel(tela),BorderLayout.CENTER);
-     
+ 
      return panel;
      
+    }
+
+    @Override
+    public void setPermissao(String permissao) {
+        this.permissao=permissao;
+      if(proximo!=null){
+            proximo.setPermissao(permissao);
+        }
     }
     
 

@@ -27,6 +27,20 @@ public class InclusaoTeste {
         
         usuarioDao.salvar(user);
         
+        user.setCpf("12345678");
+        user.setNome("Tarcisio Almeida");
+        user.setPermissao("Morador");
+        user.setSenha("12345678");
+        
+        usuarioDao.salvar(user);
+        
+                
+        user.setCpf("123");
+        user.setNome("Gonzaga");
+        user.setPermissao("Porteiro");
+        user.setSenha("123");
+            
+        usuarioDao.salvar(user);
         
     }
     

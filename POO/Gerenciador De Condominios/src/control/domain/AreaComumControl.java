@@ -17,9 +17,18 @@ import model.service.ServiceLocator;
 public class AreaComumControl {
 
     private final CrudDao dao;
+    private static AreaComumControl areaComumControl;
     
-    public AreaComumControl(){
+    private AreaComumControl(){
     this.dao=ServiceLocator.getAreaComumDao();
+    }
+    
+    public AreaComumControl getAreaComumControl(){
+        if(areaComumControl==null){
+            areaComumControl= new AreaComumControl();
+        }
+        return areaComumControl;
+    
     }
     
     public void salvarAreaComum(String nome,double valor,String endereco){

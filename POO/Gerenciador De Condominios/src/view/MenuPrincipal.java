@@ -20,23 +20,25 @@ public class MenuPrincipal extends javax.swing.JPanel {
      */
     public MenuPrincipal(String t) {
         initComponents();
-        
+
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        if(t=="Porteiro"){
+        if(t.equals("Porteiro")){
             this.financeiroMenuButton.setVisible(false);
             this.moradoresMenuButton.setVisible(false);
             this.reservasMenuButton.setVisible(false);
             this.funcionarioMenuButton.setVisible(false);
-        }else if(t=="Morador"){
+        }else if(t.equals("Morador")){
             this.moradoresMenuButton.setVisible(false);
             this.financeiroMenuButton.setVisible(false);
             this.entradaSaidaMenuButton.setVisible(false);
             this.encomendasMenuButton.setVisible(false);
             this.funcionarioMenuButton.setVisible(false);
-        }else if(t == "MoradorMestre"){
+        }else if(t.equals("MoradorMestre")){
             this.entradaSaidaMenuButton.setVisible(false);
             this.encomendasMenuButton.setVisible(false);
             this.funcionarioMenuButton.setVisible(false);
+        }else if(t.equals("Sindico")){
+
         }
     }
 

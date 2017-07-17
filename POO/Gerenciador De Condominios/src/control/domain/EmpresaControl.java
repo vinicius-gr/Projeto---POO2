@@ -7,7 +7,6 @@ package control.domain;
 
 import java.util.Iterator;
 import model.dao.CrudDao;
-import model.domain.AreaComum;
 import model.domain.Empresa;
 import model.service.ServiceLocator;
 
@@ -18,10 +17,19 @@ import model.service.ServiceLocator;
 public class EmpresaControl {
     
     private final CrudDao dao;
-    
+    private static EmpresaControl empresaControl;
     public EmpresaControl(){
     this.dao=ServiceLocator.getEmpresaDao();
     }
+    
+    public EmpresaControl getEmpresaControl(){
+        if(empresaControl==null){
+            empresaControl= new EmpresaControl();
+        }
+        return empresaControl;
+    
+    }
+    
     
     public void salvarEmpresa(String cnpj, String nome, String telefone, String email, String servico){
         Empresa m= new Empresa();

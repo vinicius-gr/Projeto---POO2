@@ -26,7 +26,6 @@ public abstract class Tela {
         frame.setResizable(false);
                 
        viewChain = FactoryView.getChainView(user.getPermissao());
-      
        frame.setContentPane(viewChain.getPainel(""));
        frame.setVisible(true);
     }
@@ -39,6 +38,7 @@ public abstract class Tela {
     }
     
     public static void start(){
+        
         frame = new JFrame("Login");
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -48,5 +48,11 @@ public class ViewPainelPrincipal implements ViewChain {
      return panel;
      
     }
-    
+    @Override
+    public void setPermissao(String permissao) {
+        this.permissao=permissao;
+      if(proximo!=null){
+            proximo.setPermissao(permissao);
+        }
+    }
 }
