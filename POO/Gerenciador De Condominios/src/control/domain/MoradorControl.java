@@ -60,4 +60,11 @@ public class MoradorControl {
         m.setEndereco(endereco);
         return dao.pesquisar(m).iterator();
     }
+    
+     public Iterator pesquisarMorador(String cpf){
+        Morador m= new Morador();
+        m.setCpf(cpf);
+        return dao.pesquisar(m).iterator();
+    }
+    
 }

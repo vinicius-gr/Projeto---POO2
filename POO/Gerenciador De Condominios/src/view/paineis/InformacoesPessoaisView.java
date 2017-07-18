@@ -5,17 +5,11 @@
  */
 package view.paineis;
 
+import control.View.Tela;
 import control.domain.FuncionarioControl;
 import control.domain.MoradorControl;
 import control.domain.UsuarioControl;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.domain.pessoas.Morador;
+import model.domain.pessoas.Usuario;
 
 /**
  *
@@ -31,6 +25,10 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
         usuarioControl = UsuarioControl.getUsuarioControl();
         moradorControl = MoradorControl.getMoradorControl();
         funcionarioControl = FuncionarioControl.getFuncionarioControl();
+        Usuario user = Tela.getUser();
+        
+        this.nomejTextField.setText(user.getNome());
+        this.CPFjTextField.setText(user.getCpf());
     }
 
     /**
@@ -80,6 +78,8 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
                 nomejTextFieldActionPerformed(evt);
             }
         });
+
+        CPFjTextField.setEditable(false);
 
         senhajLabel.setText("Senha:");
 
