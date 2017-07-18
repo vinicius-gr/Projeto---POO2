@@ -19,7 +19,7 @@ public class FinanceiroMenuView extends javax.swing.JPanel {
     public FinanceiroMenuView(String permissao) {
         initComponents();
         
-        if(permissao == "Porteiro" || permissao == "Morador" || permissao == "MoradorMestre"){
+        if(permissao.equals("Porteiro") || permissao.equals("Morador") || permissao.equals("MoradorMestre")){
             this.IncluirLancamentojButton.setVisible(false);
             this.ConsultarFinanceirojButton.setVisible(false);
         }

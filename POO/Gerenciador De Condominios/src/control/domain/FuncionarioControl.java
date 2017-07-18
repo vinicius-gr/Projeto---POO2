@@ -18,9 +18,17 @@ import model.service.ServiceLocator;
 public class FuncionarioControl {
     
     private final CrudDao dao;
+    private static FuncionarioControl funcionarioControl;
     
-    public FuncionarioControl(){
+    private FuncionarioControl(){
     this.dao=ServiceLocator.getFuncionarioDao();
+    }
+    
+     public static FuncionarioControl getFuncionarioControl(){
+        if(funcionarioControl==null){
+            funcionarioControl= new FuncionarioControl();
+        }
+        return funcionarioControl;
     }
     
     public void salvarFuncionario(String nome,String cpf, String email, String numero,String setorServico, Date horarioEntrada, Date horarioSaida){

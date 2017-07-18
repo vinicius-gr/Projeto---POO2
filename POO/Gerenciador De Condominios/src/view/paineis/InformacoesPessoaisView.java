@@ -5,6 +5,18 @@
  */
 package view.paineis;
 
+import control.domain.FuncionarioControl;
+import control.domain.MoradorControl;
+import control.domain.UsuarioControl;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.domain.pessoas.Morador;
+
 /**
  *
  * @author Aline
@@ -16,6 +28,9 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
      */
     public InformacoesPessoaisView() {
         initComponents();
+        usuarioControl = UsuarioControl.getUsuarioControl();
+        moradorControl = MoradorControl.getMoradorControl();
+        funcionarioControl = FuncionarioControl.getFuncionarioControl();
     }
 
     /**
@@ -46,6 +61,7 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
         entradajFormattedTextField = new javax.swing.JFormattedTextField();
         saidajFormattedTextField = new javax.swing.JFormattedTextField();
         funcionariojCheckBox = new javax.swing.JCheckBox();
+        salvarjButton = new javax.swing.JButton();
 
         nomejLabel.setText("Nome:");
 
@@ -59,6 +75,12 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
 
         enderecojLabel.setText("Endereço:");
 
+        nomejTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomejTextFieldActionPerformed(evt);
+            }
+        });
+
         senhajLabel.setText("Senha:");
 
         senhajPasswordField.setText("jPasswordField1");
@@ -67,7 +89,18 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
 
         SaidajLabel.setText("Saída:");
 
+        entradajFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+
+        saidajFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
+
         funcionariojCheckBox.setText("Funcionário");
+
+        salvarjButton.setText("Salvar");
+        salvarjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarjButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -108,19 +141,22 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(EntradajLabel)
                             .addComponent(funcionariojCheckBox))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(entradajFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(SaidajLabel)
+                                .addComponent(entradajFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SaidajLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(saidajFormattedTextField))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(27, 27, 27)
                                 .addComponent(setorjLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(setorjTextField)))))
+                                .addComponent(setorjTextField))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(salvarjButton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -157,11 +193,46 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
                     .addComponent(entradajFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(saidajFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SaidajLabel))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(salvarjButton)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void salvarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarjButtonActionPerformed
+        char[] senha = this.senhajPasswordField.getPassword();
+        
+    /*    DateFormat format = new SimpleDateFormat("hh:mm");
+        java.sql.Date dataEntrada = null;
+        try {
+            dataEntrada = new java.sql.Date(format.parse(this.entradajFormattedTextField.getText()).getTime());
+        } catch (ParseException ex) {
+            Logger.getLogger(InformacoesPessoaisView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        java.sql.Date dataSaida = null;
+        try {
+            dataSaida = new java.sql.Date(format.parse(this.saidajFormattedTextField.getText()).getTime());
+        } catch (ParseException ex) {
+            Logger.getLogger(InformacoesPessoaisView.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+                
+        usuarioControl.salvarUsuario(this.CPFjTextField.getText(),
+                this.nomejTextField.getText(),String.copyValueOf(senha), "");
+        
+        moradorControl.salvarMorador(this.nomejTextField.getText(), this.CPFjTextField.getText(),
+                this.emailjTextField.getText(), this.telefonejTextField.getText(), this.enderecojTextField.getText());
 
+      /*  funcionarioControl.salvarFuncionario(this.nomejTextField.getText(), this.CPFjTextField.getText(),
+                this.emailjTextField.getText(), this.telefonejTextField.getText(),
+                this.setorjTextField.getText(), dataEntrada, dataSaida);*/
+    }//GEN-LAST:event_salvarjButtonActionPerformed
+
+    private void nomejTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomejTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomejTextFieldActionPerformed
+UsuarioControl usuarioControl;
+MoradorControl moradorControl;
+FuncionarioControl funcionarioControl;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CPFjLabel;
     private javax.swing.JTextField CPFjTextField;
@@ -176,6 +247,7 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
     private javax.swing.JLabel nomejLabel;
     private javax.swing.JTextField nomejTextField;
     private javax.swing.JFormattedTextField saidajFormattedTextField;
+    private javax.swing.JButton salvarjButton;
     private javax.swing.JLabel senhajLabel;
     private javax.swing.JPasswordField senhajPasswordField;
     private javax.swing.JLabel setorjLabel;

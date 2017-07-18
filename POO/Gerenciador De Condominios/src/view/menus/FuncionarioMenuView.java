@@ -19,7 +19,7 @@ public class FuncionarioMenuView extends javax.swing.JPanel {
     public FuncionarioMenuView(String permissao) {
         initComponents();
         
-        if(permissao == "Porteiro" || permissao == "Morador" || permissao == "MoradorMestre"){
+        if(permissao.equals("Porteiro") || permissao.equals("Morador") || permissao.equals("MoradorMestre")){
             this.cadastrarFuncionariojButton.setVisible(false);
         }
     }

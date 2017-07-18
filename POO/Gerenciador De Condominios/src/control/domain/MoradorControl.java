@@ -16,11 +16,19 @@ import model.service.ServiceLocator;
  * @author aline.lima
  */
 public class MoradorControl {
-
+    
+    private static MoradorControl moradorControl;
     private final CrudDao dao;
     
-    public MoradorControl(){
+    private MoradorControl(){
     this.dao=ServiceLocator.getMoradorDao();
+    }
+    
+     public static MoradorControl getMoradorControl(){
+        if(moradorControl==null){
+            moradorControl= new MoradorControl();
+        }
+        return moradorControl;
     }
     
     public void salvarMorador(String nome,String cpf, String email, String numero,String endereco){

@@ -19,7 +19,7 @@ public class EntradaSaidaMenuView extends javax.swing.JPanel {
     public EntradaSaidaMenuView(String permissao) {
         initComponents();
         
-        if(permissao =="Morador" || permissao == "MoradorMestre"){
+        if(permissao.equals("Morador") || permissao.equals("MoradorMestre")){
             this.CadastroVisitantejButton.setVisible(false);
         }
     }

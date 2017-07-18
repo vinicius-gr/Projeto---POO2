@@ -17,19 +17,29 @@ import model.service.ServiceLocator;
 public class EncomendaControl {
     
     private final CrudDao dao;
+    private static EncomendaControl encomendaControl;
     
     private EncomendaControl(){
     this.dao=ServiceLocator.getEncomendaDao();
     }
     
-    public void salvarEncomenda(String endereco, String destinatario){
+    public static EncomendaControl getEncomendaControl(){
+        if(encomendaControl==null){
+            encomendaControl= new EncomendaControl();
+        }
+        return encomendaControl;
+    }
+    
+    public void salvarEncomenda(String codigo, String endereco, String destinatario, boolean entregue){
         Encomenda m= new Encomenda();
+        m.setCodigo(codigo);
         m.setEndereco(endereco);
         m.setDestinatario(destinatario);
+        m.setEntregue(entregue);
         dao.salvar(m);
     }
     
-    public void excluirEncomenda(int codigo,String endereco, String destinatario){
+    public void excluirEncomenda(String codigo,String endereco, String destinatario){
         Encomenda m= new Encomenda();
         m.setCodigo(codigo);
         m.setEndereco(endereco);
@@ -37,7 +47,7 @@ public class EncomendaControl {
         dao.excluir(m);
     }
     
-    public Iterator pesquisarEncomenda(int codigo, String endereco, String destinatario){
+    public Iterator pesquisarEncomenda(String codigo, String endereco, String destinatario){
         Encomenda m= new Encomenda();
         m.setCodigo(codigo);
         m.setEndereco(endereco);

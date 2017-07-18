@@ -21,15 +21,15 @@ import javax.persistence.Table;
 @Table(name="encomenda")
 public class Encomenda implements Serializable {
     @Id
-    @GeneratedValue
-    private int codigo;
+    private String codigo;
     private String endereco;
     private String destinatario;
+    private boolean entregue;
     
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
     public String getEndereco() {
@@ -46,5 +46,15 @@ public class Encomenda implements Serializable {
     public void setDestinatario(String destinatario) {
         this.destinatario = destinatario;
     }
+
+    public boolean isEntregue() {
+        return entregue;
+    }
+
+    public void setEntregue(boolean entregue) {
+        this.entregue = entregue;
+    }
+    
+    
 
 }

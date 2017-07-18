@@ -18,16 +18,16 @@ public class EmpresaControl {
     
     private final CrudDao dao;
     private static EmpresaControl empresaControl;
-    public EmpresaControl(){
+    
+    private EmpresaControl(){
     this.dao=ServiceLocator.getEmpresaDao();
     }
     
-    public EmpresaControl getEmpresaControl(){
+    public static EmpresaControl getEmpresaControl(){
         if(empresaControl==null){
             empresaControl= new EmpresaControl();
         }
         return empresaControl;
-    
     }
     
     

@@ -19,10 +19,10 @@ public class ReclamacoesMenuView extends javax.swing.JPanel {
     public ReclamacoesMenuView(String permissao) {
         initComponents();
         
-        if(permissao == "Porteiro"){
+        if(permissao.equals("Porteiro")){
             this.RegistrarReclamacoesjButton.setVisible(false);
         }
-        if(permissao == "Porteiro" || permissao == "Morador" || permissao == "MoradorMestre"){
+        if(permissao.equals("Porteiro") || permissao.equals("Morador") || permissao.equals("MoradorMestre")){
             this.ResponderReclamacoesjButton.setVisible(false);
         }
         

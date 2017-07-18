@@ -5,6 +5,7 @@
  */
 package control;
 
+import control.domain.MoradorControl;
 import java.util.Iterator;
 import model.domain.pessoas.Morador;
 
@@ -15,7 +16,7 @@ import model.domain.pessoas.Morador;
 public class MoradorControlTest {
     
     public static void main(String[] args) {
-        MoradorControl mc= new MoradorControl();
+        MoradorControl mc = MoradorControl.getMoradorControl();
         
         mc.salvarMorador("Andre Luiz", "000000000", "email", "numero", "endereco");
         

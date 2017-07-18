@@ -5,6 +5,11 @@
  */
 package view.paineis;
 
+import control.domain.VisitanteControl;
+import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
+
 /**
  *
  * @author Aline
@@ -16,6 +21,8 @@ public class CadastroVisitanteView extends javax.swing.JPanel {
      */
     public CadastroVisitanteView() {
         initComponents();
+        
+        visitanteControl = VisitanteControl.getVisitanteControl();
     }
 
     /**
@@ -48,12 +55,27 @@ public class CadastroVisitanteView extends javax.swing.JPanel {
         CPFjLabel.setText("CPF:");
 
         PrestadorServicojCheckBox.setText("Prestador de Serviços");
+        PrestadorServicojCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrestadorServicojCheckBoxActionPerformed(evt);
+            }
+        });
 
         TelefonejLabel.setText("Telefone:");
 
         EntradajButton.setText("Registrar Entrada");
+        EntradajButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradajButtonActionPerformed(evt);
+            }
+        });
 
         SaidajButton.setText("Registrar Saída");
+        SaidajButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaidajButtonActionPerformed(evt);
+            }
+        });
 
         MoradorjLabel.setText("Morador Responsável:");
 
@@ -74,39 +96,36 @@ public class CadastroVisitanteView extends javax.swing.JPanel {
                         .addComponent(NomejLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(NomejTextField))
+                    .addComponent(PrestadorServicojCheckBox)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CPFjLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CPFjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TelefonejLabel)
+                        .addGap(10, 10, 10)
+                        .addComponent(TelefonejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(EntradajButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(SaidajButton))
+                    .addComponent(MoradorjLabel)
+                    .addComponent(VisitantejLabel)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(NomeMoradorjLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(NomeMoradorjTextField))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(EnderecojLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EnderecojTextField))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PrestadorServicojCheckBox)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(CPFjLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CPFjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TelefonejLabel)
-                                .addGap(10, 10, 10)
-                                .addComponent(TelefonejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(EntradajButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(SaidajButton))
-                            .addComponent(MoradorjLabel)
-                            .addComponent(VisitantejLabel))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EnderecojTextField)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(VisitantejLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomejLabel)
                     .addComponent(NomejTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -122,9 +141,9 @@ public class CadastroVisitanteView extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EntradajButton)
                     .addComponent(SaidajButton))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MoradorjLabel)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomeMoradorjLabel)
                     .addComponent(NomeMoradorjTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -132,11 +151,31 @@ public class CadastroVisitanteView extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EnderecojLabel)
                     .addComponent(EnderecojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
+                .addGap(47, 47, 47))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void PrestadorServicojCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrestadorServicojCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PrestadorServicojCheckBoxActionPerformed
 
+    private void EntradajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradajButtonActionPerformed
+        Date date;
+        date= Date.valueOf(LocalDate.now());
+        
+        visitanteControl.salvarVisitante(this.NomeMoradorjTextField.getText(), this.CPFjTextField.getText(),
+                this.TelefonejTextField.getText(), this.PrestadorServicojCheckBox.isSelected(),date ,null);
+    }//GEN-LAST:event_EntradajButtonActionPerformed
+
+    private void SaidajButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaidajButtonActionPerformed
+        Date date;
+        date= Date.valueOf(LocalDate.now());
+        
+        visitanteControl.salvarVisitante(this.NomeMoradorjTextField.getText(), this.CPFjTextField.getText(),
+                this.TelefonejTextField.getText(), this.PrestadorServicojCheckBox.isSelected(),null ,date);
+    }//GEN-LAST:event_SaidajButtonActionPerformed
+
+VisitanteControl visitanteControl;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CPFjLabel;
     private javax.swing.JTextField CPFjTextField;

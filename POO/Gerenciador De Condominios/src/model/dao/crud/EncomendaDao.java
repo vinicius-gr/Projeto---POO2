@@ -12,6 +12,6 @@ import model.domain.Encomenda;
  *
  * @author  Tarcisio
  */
-public interface EncomendaDao extends CrudDao<Encomenda,Integer> {
+public interface EncomendaDao extends CrudDao<Encomenda,String> {
     
 }

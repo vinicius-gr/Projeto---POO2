@@ -18,42 +18,41 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="EnderecojLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="EnderecojTextField" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="RecebimentojLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="RecebimentojFormattedTextField" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="EntregajLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="EntregajFormattedTextField" min="-2" pref="120" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="DestinatariojLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DestinatariojTextField" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="SalvarjButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="CodigoCorrespondenciajLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="EnderecojLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CodigoCorrespondenciajTextField" min="-2" pref="248" max="-2" attributes="0"/>
+                              <Component id="EnderecojTextField" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="DestinatariojLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DestinatariojTextField" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="CodigoCorrespondenciajLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="CodigoCorrespondenciajTextField" min="-2" pref="248" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="EntreguejCheckBox" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,16 +74,11 @@
                   <Component id="CodigoCorrespondenciajTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="CodigoCorrespondenciajLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="RecebimentojLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="EntregajLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="RecebimentojFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="EntregajFormattedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="124" max="32767" attributes="0"/>
+              <Component id="EntreguejCheckBox" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <Component id="SalvarjButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="125" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,16 +94,6 @@
         <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="RecebimentojLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Recebimento:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="EntregajLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Entrega:"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JTextField" name="DestinatariojTextField">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DestinatariojTextFieldActionPerformed"/>
@@ -119,10 +103,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EnderecojTextFieldActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JFormattedTextField" name="RecebimentojFormattedTextField">
-    </Component>
-    <Component class="javax.swing.JFormattedTextField" name="EntregajFormattedTextField">
     </Component>
     <Component class="javax.swing.JTextField" name="CodigoCorrespondenciajTextField">
       <Events>
@@ -134,10 +114,21 @@
         <Property name="text" type="java.lang.String" value="C&#xf3;digo correspond&#xea;ncia:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="SalvarjButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalvarjButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="EntreguejCheckBox">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Entregue"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntreguejCheckBoxActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

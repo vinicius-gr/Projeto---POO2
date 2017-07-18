@@ -5,6 +5,8 @@
  */
 package view.paineis;
 
+import control.domain.MoradorControl;
+
 /**
  *
  * @author Aline
@@ -16,6 +18,7 @@ public class ConsultarMoradoresView extends javax.swing.JPanel {
      */
     public ConsultarMoradoresView() {
         initComponents();
+        moradorControl = MoradorControl.getMoradorControl();
     }
 
     /**
@@ -41,6 +44,11 @@ public class ConsultarMoradoresView extends javax.swing.JPanel {
         jLabel1.setText("CPF:");
 
         pesquisarjButton.setText("Pesquisar");
+        pesquisarjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarjButtonActionPerformed(evt);
+            }
+        });
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -94,7 +102,11 @@ public class ConsultarMoradoresView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void pesquisarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarjButtonActionPerformed
+          
+    }//GEN-LAST:event_pesquisarjButtonActionPerformed
 
+MoradorControl moradorControl;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField cpfjTextField;
     private javax.swing.JButton jButton1;

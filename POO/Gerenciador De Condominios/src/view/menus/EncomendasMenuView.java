@@ -20,7 +20,7 @@ public class EncomendasMenuView extends javax.swing.JPanel{
     public EncomendasMenuView(String permissao) {
         initComponents();
         
-        if(permissao =="Morador" || permissao == "MoradorMestre"){
+        if(permissao.equals("Morador") || permissao.equals("MoradorMestre")){
             this.CadastroEncomendasjButton.setVisible(false);
         }
     }

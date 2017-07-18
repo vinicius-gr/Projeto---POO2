@@ -16,9 +16,17 @@ import model.service.ServiceLocator;
  */
 public class UsuarioControl {
     private final CrudDao dao;
+    private static UsuarioControl usuarioControl;
     
     public UsuarioControl(){
     this.dao=ServiceLocator.getUsuarioDao();
+    }
+    
+    public static UsuarioControl getUsuarioControl(){
+        if(usuarioControl==null){
+            usuarioControl= new UsuarioControl();
+        }
+        return usuarioControl;
     }
     
     public void salvarUsuario(String cpf,String nome, String senha, String permissao){

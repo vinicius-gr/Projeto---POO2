@@ -16,9 +16,17 @@ import model.service.ServiceLocator;
  */
 public class ReclamacaoControl {
     private final CrudDao dao;
+    private static ReclamacaoControl reclamacaoControl;
     
     public ReclamacaoControl(){
     this.dao=ServiceLocator.getReclamacaoDao();
+    }
+    
+     public static ReclamacaoControl getReclamacaoControl(){
+        if(reclamacaoControl==null){
+            reclamacaoControl= new ReclamacaoControl();
+        }
+        return reclamacaoControl;
     }
     
     public void salvarReclamacao(String assunto,String texto, String respostaSindico){

@@ -5,6 +5,8 @@
  */
 package view.paineis;
 
+import control.domain.EncomendaControl;
+
 /**
  *
  * @author Aline
@@ -16,6 +18,7 @@ public class CadastroEncomendasView extends javax.swing.JPanel {
      */
     public CadastroEncomendasView() {
         initComponents();
+        encomendaControl = EncomendaControl.getEncomendaControl();
     }
 
     /**
@@ -29,23 +32,16 @@ public class CadastroEncomendasView extends javax.swing.JPanel {
 
         DestinatariojLabel = new javax.swing.JLabel();
         EnderecojLabel = new javax.swing.JLabel();
-        RecebimentojLabel = new javax.swing.JLabel();
-        EntregajLabel = new javax.swing.JLabel();
         DestinatariojTextField = new javax.swing.JTextField();
         EnderecojTextField = new javax.swing.JTextField();
-        RecebimentojFormattedTextField = new javax.swing.JFormattedTextField();
-        EntregajFormattedTextField = new javax.swing.JFormattedTextField();
         CodigoCorrespondenciajTextField = new javax.swing.JTextField();
         CodigoCorrespondenciajLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        SalvarjButton = new javax.swing.JButton();
+        EntreguejCheckBox = new javax.swing.JCheckBox();
 
         DestinatariojLabel.setText("Destinatário:");
 
         EnderecojLabel.setText("Endereço:");
-
-        RecebimentojLabel.setText("Recebimento:");
-
-        EntregajLabel.setText("Entrega:");
 
         DestinatariojTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +63,19 @@ public class CadastroEncomendasView extends javax.swing.JPanel {
 
         CodigoCorrespondenciajLabel.setText("Código correspondência:");
 
-        jButton1.setText("Salvar");
+        SalvarjButton.setText("Salvar");
+        SalvarjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarjButtonActionPerformed(evt);
+            }
+        });
+
+        EntreguejCheckBox.setText("Entregue");
+        EntreguejCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntreguejCheckBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -75,34 +83,31 @@ public class CadastroEncomendasView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(EnderecojLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EnderecojTextField))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(RecebimentojLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RecebimentojFormattedTextField)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EntregajLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EntregajFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(DestinatariojLabel)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(SalvarjButton))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(EnderecojLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(DestinatariojTextField))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(CodigoCorrespondenciajLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CodigoCorrespondenciajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                                .addComponent(EnderecojTextField))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(DestinatariojLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DestinatariojTextField))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(CodigoCorrespondenciajLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(CodigoCorrespondenciajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap(19, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(EntreguejCheckBox)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,15 +124,11 @@ public class CadastroEncomendasView extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CodigoCorrespondenciajTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CodigoCorrespondenciajLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RecebimentojLabel)
-                    .addComponent(EntregajLabel)
-                    .addComponent(RecebimentojFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EntregajFormattedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addComponent(EntreguejCheckBox)
+                .addGap(7, 7, 7)
+                .addComponent(SalvarjButton)
+                .addContainerGap(125, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -143,7 +144,17 @@ public class CadastroEncomendasView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_CodigoCorrespondenciajTextFieldActionPerformed
 
+    private void SalvarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarjButtonActionPerformed
+        encomendaControl.salvarEncomenda(this.CodigoCorrespondenciajTextField.getText(),
+                this.DestinatariojTextField.getText(), this.EnderecojTextField.getText(),
+                this.EntreguejCheckBox.isSelected());
+    }//GEN-LAST:event_SalvarjButtonActionPerformed
 
+    private void EntreguejCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntreguejCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntreguejCheckBoxActionPerformed
+
+EncomendaControl encomendaControl;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CodigoCorrespondenciajLabel;
     private javax.swing.JTextField CodigoCorrespondenciajTextField;
@@ -151,10 +162,7 @@ public class CadastroEncomendasView extends javax.swing.JPanel {
     private javax.swing.JTextField DestinatariojTextField;
     private javax.swing.JLabel EnderecojLabel;
     private javax.swing.JTextField EnderecojTextField;
-    private javax.swing.JFormattedTextField EntregajFormattedTextField;
-    private javax.swing.JLabel EntregajLabel;
-    private javax.swing.JFormattedTextField RecebimentojFormattedTextField;
-    private javax.swing.JLabel RecebimentojLabel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox EntreguejCheckBox;
+    private javax.swing.JButton SalvarjButton;
     // End of variables declaration//GEN-END:variables
 }

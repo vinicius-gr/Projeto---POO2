@@ -23,7 +23,7 @@ public class AreaComumControl {
     this.dao=ServiceLocator.getAreaComumDao();
     }
     
-    public AreaComumControl getAreaComumControl(){
+    public static AreaComumControl getAreaComumControl(){
         if(areaComumControl==null){
             areaComumControl= new AreaComumControl();
         }

@@ -29,12 +29,12 @@ public class InformacoesPessoaisMenuView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SalvarjButton = new javax.swing.JButton();
+        alterarjButton = new javax.swing.JButton();
 
-        SalvarjButton.setText("Salvar");
-        SalvarjButton.addActionListener(new java.awt.event.ActionListener() {
+        alterarjButton.setText("Alterar Informações Pessoais");
+        alterarjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalvarjButtonActionPerformed(evt);
+                alterarjButtonActionPerformed(evt);
             }
         });
 
@@ -44,24 +44,24 @@ public class InformacoesPessoaisMenuView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addComponent(SalvarjButton)
-                .addContainerGap(383, Short.MAX_VALUE))
+                .addComponent(alterarjButton)
+                .addContainerGap(273, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(SalvarjButton)
+                .addComponent(alterarjButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SalvarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarjButtonActionPerformed
+    private void alterarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarjButtonActionPerformed
          Tela.atualizaTela("InformacoesPessoais");
-    }//GEN-LAST:event_SalvarjButtonActionPerformed
+    }//GEN-LAST:event_alterarjButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton SalvarjButton;
+    private javax.swing.JButton alterarjButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,9 +16,17 @@ import model.service.ServiceLocator;
  */
 public class VeiculoControl {
     private final CrudDao dao;
+    private static VeiculoControl veiculoControl;
     
     public VeiculoControl(){
     this.dao=ServiceLocator.getVeiculoDao();
+    }
+    
+    public static VeiculoControl getVeiculoControl(){
+        if(veiculoControl==null){
+            veiculoControl= new VeiculoControl();
+        }
+        return veiculoControl;
     }
     
     public void salvarVeiculo(String placa,String modelo){

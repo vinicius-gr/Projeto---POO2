@@ -19,9 +19,17 @@ import model.service.ServiceLocator;
 public class VisitanteControl {
 
     private final CrudDao dao;
+    private static VisitanteControl visitanteControl;
     
     public VisitanteControl(){
     this.dao=ServiceLocator.getVisitanteDao();
+    }
+    
+    public static VisitanteControl getVisitanteControl(){
+        if(visitanteControl==null){
+            visitanteControl= new VisitanteControl();
+        }
+        return visitanteControl;
     }
     
     public void salvarVisitante(String nome,String cpf, String telefone,boolean prestadorServico, Date horaDeEntrada, Date horaDeSaida){

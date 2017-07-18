@@ -18,8 +18,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-              <Component id="SalvarjButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="383" max="32767" attributes="0"/>
+              <Component id="alterarjButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="273" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -27,19 +27,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="SalvarjButton" min="-2" max="-2" attributes="0"/>
+              <Component id="alterarjButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="SalvarjButton">
+    <Component class="javax.swing.JButton" name="alterarjButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Salvar"/>
+        <Property name="text" type="java.lang.String" value="Alterar Informa&#xe7;&#xf5;es Pessoais"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalvarjButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="alterarjButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

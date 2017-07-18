@@ -19,7 +19,7 @@ public class MoradoresMenuView extends javax.swing.JPanel {
     public MoradoresMenuView(String permissao) {
         initComponents();
         
-        if(permissao == "Porteiro" || permissao == "Morador"){
+        if(permissao.equals("Porteiro") || permissao.equals("Morador")){
             this.CadastrarMoradorjButton.setVisible(false);
         }
     }
