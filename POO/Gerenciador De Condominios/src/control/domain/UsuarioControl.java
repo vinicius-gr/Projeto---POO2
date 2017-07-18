@@ -6,8 +6,9 @@
 package control.domain;
 
 import java.util.Iterator;
+import java.util.List;
 import model.dao.CrudDao;
-import model.domain.Usuario;
+import model.domain.pessoas.Usuario;
 import model.service.ServiceLocator;
 
 /**
@@ -60,7 +61,14 @@ public class UsuarioControl {
             Usuario m= new Usuario();
         m.setCpf(cpf);
         m.setSenha(senha);
-       return (Usuario) dao.pesquisar(m).get(0);
+        
+       List <Usuario> list = dao.pesquisar(m);
+       
+       if(list.size()==1){
+       return  list.get(0);
+       }
+       else
+           return null;
     
     }
 }

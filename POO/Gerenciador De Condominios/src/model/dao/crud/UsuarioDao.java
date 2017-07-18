@@ -6,7 +6,7 @@
 package model.dao.crud;
 
 import model.dao.CrudDao;
-import model.domain.Usuario;
+import model.domain.pessoas.Usuario;
 
 /**
  *

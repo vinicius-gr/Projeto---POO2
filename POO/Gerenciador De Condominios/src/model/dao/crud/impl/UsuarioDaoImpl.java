@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import model.dao.CrudDaoImpl;
 import model.dao.crud.UsuarioDao;
-import model.domain.Usuario;
+import model.domain.pessoas.Usuario;
 
 /**
  *

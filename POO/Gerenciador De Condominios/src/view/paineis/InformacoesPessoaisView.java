@@ -230,6 +230,7 @@ public class InformacoesPessoaisView extends javax.swing.JPanel {
     private void nomejTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomejTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomejTextFieldActionPerformed
+
 UsuarioControl usuarioControl;
 MoradorControl moradorControl;
 FuncionarioControl funcionarioControl;

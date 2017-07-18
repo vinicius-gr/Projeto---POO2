@@ -27,7 +27,6 @@ public abstract class Pessoa implements Serializable {
     private String cpf;
     @Column (name="nome",nullable=false )
     private String nome;
-    @Column (name="telefone",nullable=false)
     private String telefone;
     
     

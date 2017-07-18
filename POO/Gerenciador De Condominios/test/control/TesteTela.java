@@ -6,7 +6,7 @@
 package control;
 
 import control.View.Tela;
-import model.domain.Usuario;
+import model.domain.pessoas.Usuario;
 /**
  *
  * @author Tarcísio M. Almeida

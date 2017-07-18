@@ -6,7 +6,7 @@
 package control.View;
 
 import javax.swing.JFrame;
-import model.domain.Usuario;
+import model.domain.pessoas.Usuario;
 import view.LoginPanel;
 
 /**
@@ -14,6 +14,8 @@ import view.LoginPanel;
  * @author Tarcísio M. Almeida
  */
 public abstract class Tela {
+    
+        private static Usuario user;
        private static JFrame frame;
        private static ViewChain viewChain;
       private static  JFrame jf;
@@ -21,6 +23,7 @@ public abstract class Tela {
     public static void inicializaTela(Usuario user){
         
         frame= new JFrame("GerConT");
+        Tela.user=user;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(700, 400);
         frame.setResizable(false);
@@ -49,5 +52,9 @@ public abstract class Tela {
     
     public static void end(){
     frame.dispose();
+    }
+
+    public static Usuario getUser() {
+        return user;
     }
 }

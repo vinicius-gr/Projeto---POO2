@@ -7,7 +7,7 @@ package view;
 
 import control.View.Tela;
 import control.domain.UsuarioControl;
-import model.domain.Usuario;
+import model.domain.pessoas.Usuario;
 
 /**
  *

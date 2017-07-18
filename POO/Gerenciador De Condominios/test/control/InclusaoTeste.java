@@ -6,7 +6,7 @@
 package control;
 
 import model.dao.CrudDao;
-import model.domain.Usuario;
+import model.domain.pessoas.Usuario;
 import model.service.ServiceLocator;
 
 /**
@@ -22,16 +22,15 @@ public class InclusaoTeste {
         user.setNome("Aline de Souza Lima");
         user.setPermissao("Sindico");
         user.setSenha("12345");
-        
         CrudDao usuarioDao = ServiceLocator.getUsuarioDao();
         
         usuarioDao.salvar(user);
+        /*
         
         user.setCpf("12345678");
         user.setNome("Tarcisio Almeida");
         user.setPermissao("Morador");
         user.setSenha("12345678");
-        
         usuarioDao.salvar(user);
         
                 
@@ -39,10 +38,8 @@ public class InclusaoTeste {
         user.setNome("Gonzaga");
         user.setPermissao("Porteiro");
         user.setSenha("123");
-            
-        usuarioDao.salvar(user);
+        usuarioDao.salvar(user);*/
         
+    
     }
-    
-    
 }

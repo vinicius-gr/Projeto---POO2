@@ -6,6 +6,8 @@
 package view.paineis;
 
 import control.domain.MoradorControl;
+import control.domain.UsuarioControl;
+import java.util.Arrays;
 
 /**
  *
@@ -19,6 +21,7 @@ public class CadastroMoradorView extends javax.swing.JPanel {
     public CadastroMoradorView() {
         initComponents();
         moradorControl = MoradorControl.getMoradorControl();
+        usuarioControl= UsuarioControl.getUsuarioControl();
     }
 
     /**
@@ -152,16 +155,31 @@ public class CadastroMoradorView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        String permissao;
+        if(this.jCheckBox1.isSelected()){
+            permissao= "MoradorMestre";
+        }
+        else
+            permissao="Morador";
+        
+
         moradorControl.salvarMorador(this.nomejTextField.getText(),
-                this.CPFjTextField.getText(), this.emailjTextField.getText(), this.telefonejTextField.getText(),
+                this.CPFjTextField.getText(), this.emailjTextField.getText(),
+                this.telefonejTextField.getText(),
                 this.enderecojTextField.getText());
+        
+        usuarioControl.salvarUsuario(this.CPFjTextField.getText(), this.nomejTextField.getText()
+                ,String.copyValueOf(this.senhajPasswordField.getPassword()),permissao);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-MoradorControl moradorControl;
+    
+    private UsuarioControl usuarioControl;
+    private MoradorControl moradorControl;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CPFjLabel;
     private javax.swing.JTextField CPFjTextField;
